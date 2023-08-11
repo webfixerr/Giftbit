@@ -24,7 +24,7 @@ GIFTBIT_ACCESS_KEY=GIFTBIT_ACCESS_KEY
 The package will register itself automatically.
 Optionally publish config file of package
  ```bash
-$ php artisan vendor:publish --provider="wfx\Giftbit\GiftbitServiceProvider" --tag="config"
+$ php artisan vendor:publish --provider="wfx\Giftbit\GiftbitServiceProvider"
 ```
 ## Usage
 To get particular region from the regions list
