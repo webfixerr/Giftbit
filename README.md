@@ -58,9 +58,10 @@ If you discover any security related issues, please email varun@webfixerr.com in
 
 ## Credits
 
-- [Varun Gupta][link-author]
-- [All Contributors][link-contributors]
+- [Webfixerr][link-author]
 
 ## License
 
 MIT. Please see the [license file](LICENSE) for more information.
+
+[link-author]: https://github.com/webfixerr
