@@ -121,7 +121,7 @@ class CreateResponse
             $this->_id = $jsonRes['id'];
         }
         if (array_key_exists('uuid', $jsonRes)) {
-            $this->_id = $jsonRes['uuid'];
+            $this->_uuid = $jsonRes['uuid'];
         }
         if (array_key_exists('expiry', $jsonRes)) {
             $this->_expiration_date = $jsonRes['expiry'];

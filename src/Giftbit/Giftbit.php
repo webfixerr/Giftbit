@@ -13,7 +13,7 @@ use WFX\Giftbit\Response\RegionResponse;
 
 class Giftbit
 {
-    public const ACCEPT_HEADER = 'accept-encoding';
+    public const ACCEPT_HEADER = 'Accept-Encoding';
     public const CONTENT_HEADER = 'content-type';
     public const AUTHORIZATION_HEADER = 'Authorization';
     public const BRANDS_SERVICE = 'brands';
@@ -127,8 +127,9 @@ class Giftbit
     public function makeRequest($serviceOperation, $payload, $post): string
     {
         $endpoint = $this->_config->getEndpoint();
-        $url = $endpoint . '/' . $serviceOperation;
+        $url = 'https://' . $endpoint . '/papi/v1/' . $serviceOperation;
         $headers = $this->buildHeaders();
+        $payload = json_encode($payload);
         return (new Client())->request($url, $headers, $payload, $post);
     }
 
@@ -145,9 +146,9 @@ class Giftbit
         $AUTHORIZATION_HEADER = self::AUTHORIZATION_HEADER;
         $authorizationValue = $this->_config->getAccessKey();
         return [
-            'Content-Type:' . $this->getContentType(),
+            'Content-Type: ' . $this->getContentType(),
             $AUTHORIZATION_HEADER . ': Bearer ' . $authorizationValue,
-            $ACCEPT_HEADER . ':' . $this->getAcceptEncoding()
+            $ACCEPT_HEADER . ': ' . $this->getAcceptEncoding()
         ];
     }
 
