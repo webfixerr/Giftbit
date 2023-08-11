@@ -1,0 +1,19 @@
+{
+    "name": "wfx/giftbit",
+    "description": "The package for giftbit APIs",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "WFX\\Giftbit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Varun Gupta",
+            "email": "varun@webfixerr.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
