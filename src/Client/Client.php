@@ -15,10 +15,10 @@ class Client implements ClientInterface
      *
      * @param string $url The URL being requested, including domain and protocol
      * @param array $headers Headers to be used in the request
-     * @param array $params Can be nested for arrays and hashes
+     * @param string $params
      *
      *
-     * @return String
+     * @return string
      */
     public function request($url, $headers, $params, $post = true): string
     {
@@ -41,7 +41,7 @@ class Client implements ClientInterface
 
         if (curl_getinfo($handle, CURLINFO_HTTP_CODE) !== JsonResponse::HTTP_OK) {
             $err = curl_errno($handle);
-            $message = json_decode($result)->message;
+            $message = json_decode($result)->error->message;
             throw GiftbitErrors::getError($message, $err);
         }
         return $result;
